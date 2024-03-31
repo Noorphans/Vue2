@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul id="list"></ul>
+
+  <script>
+    // 一些人的数据
+    let persons = [
+      { id: `001`, name: `张三`, age: 18 },
+      { id: `002`, name: `李四`, age: 19 },
+      { id: `003`, name: `王五`, age: 20 },
+    ]
+
+    // 准备字符串
+    let arr = ''
+
+    // 遍历数组并拼接字符串,<li>标签通过JavaScript动态生成
+    persons.forEach(p => {
+      arr += `<li>${p.id} -${p.name} - ${p.age}</li>`
+    });
+
+    // 获取元素list
+    let list = document.getElementById('list')
+
+    // 修改内容 (亲自操作DOM)
+    list.innerHTML = arr
+  </script>
+</body>
+
+</html>
